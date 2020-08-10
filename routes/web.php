@@ -17,7 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/blogs',function(){
-// return view Home di di folder Blogs
-    return view('Blogs/Home');
-})->name('blogs.home');
+Route::resource('/blogs','BlogController');

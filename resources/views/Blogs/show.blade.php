@@ -4,7 +4,7 @@
 <h2>{{ $score }}</h2>
 <ul>
     @forelse ($users as $user)
-        <li> {{ $user }}</li>
+        <li> {{ $user->username }}</li>
             @empty
             user is empty
             @endforelse

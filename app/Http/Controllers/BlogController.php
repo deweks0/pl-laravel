@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class BlogController extends Controller
 {
     /**
@@ -13,6 +13,7 @@ class BlogController extends Controller
      */
     public function index()
     {
+        
         return view('Blogs.Home');
     }
 
@@ -47,7 +48,8 @@ class BlogController extends Controller
     {
         //
         $score ='ini adalah linknya '.$id;
-        $users = ['lutfi','test','admin','user'];
+        $users = DB::table('users')->get();
+        // dd($users);
         return view('Blogs.show',compact('score','users')); 
 
     }
